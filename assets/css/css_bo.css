@@ -1,0 +1,63 @@
+.menu-active{
+	background: #34495e;
+	color: #FFF;
+}
+.menu-active:hover{
+	background: #2c3e50;
+	color: #FFF;
+}
+.parent-pesanan{
+	position: absolute;
+	right: 20px;
+}
+.child-pesanan{
+	display: none;
+}
+.child-pesanan-collapse{
+	display: block;
+}
+.btn-save-ongkir{
+	background: green;
+	color: #FFF;
+	font-size: 20px;
+	padding: 0px 5px 2px 5px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+}
+
+.judul-item{
+	width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+#image-preview{
+  max-width:280px;
+  display:block;
+  margin-bottom: 20px;
+}
+#img-preview{
+  max-width:280px;
+  display:block;
+  margin-bottom: 20px;
+}
+/*-- LOGIN / DAFTAR SECTION --*/
+.logo-daftar-login{
+	margin: 50px 0;
+}
+.logo-daftar-login a{
+	text-decoration: none;
+	color: black;
+
+}
+.form-daftar{
+	margin-top: 20px;
+}
+.box-registrasi-login{
+	width: 350px;
+	padding: 25px;
+	border-radius: 8px;
+}

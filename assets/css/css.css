@@ -1,0 +1,333 @@
+*{
+	font-family: 'Roboto', sans-serif;
+}
+body{
+	padding-top: 50px;
+}
+.title-page{
+	margin-bottom: 50px;
+}
+.btn-slide {
+	display: none;
+}
+.carousel:hover > .btn-slide{
+	display: block;
+}
+.carousel-inner{
+	border-radius: 10px;
+}
+.carousel-indicators{
+	position: absolute;
+	left: 10px;
+}
+.form-mencari{
+	width: 100%;
+  	padding: 5px 20px 5px 10px;
+  	border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.form-mencari:focus{
+  text-decoration: none;
+  outline: 0;
+}
+.section-search{
+	position: relative;
+}
+.search-button{
+	position: absolute;
+	right: 8px;
+	top: 6px;
+	background: transparent;
+	border: 0;
+}
+.btn-daftar{
+	font-weight: bold;
+	border-radius: 10px;
+	color: #2980b9;
+}
+.ic-dicount{
+	max-width: 40px;
+}
+.lihat-semua{
+	text-decoration: none;
+}
+.item-discount{
+	margin-bottom: 40px;
+	transition: 0.3s;
+}
+.item-discount:hover{
+	cursor: pointer;
+}
+.item-discount:hover > .box-discount{
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.item-desc{
+	margin: 0 20px;
+}
+.item-desc p{
+	font-size: 13pt;
+}
+.box-discount{
+	border-radius: 10px;
+	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	padding-bottom: 10px;
+	margin: -10px;
+	transition: 0.3s;
+}
+.harga-diskon{
+	font-size: 12px;
+	opacity: 0.5;
+}
+.harga-diskon s{
+	color: grey;
+}
+.discount-section{
+	padding-bottom: 80px;
+}
+.item-gambar{
+	height: 200px;
+	margin-bottom: 20px;
+}
+.judul-item{
+	width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.item-jual-desc{
+	margin: 0 20px;
+}
+.item-desc p{
+	font-size: 12pt;
+}
+.judul-item-jual{
+	width: 130px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#sidebarToggle{
+		background: rgba(0, 0, 0, 0);
+		border: 0;
+}
+.toggler-menu-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar-web{
+		display: none;
+		background: black;
+}
+
+.box-image-barang{
+	border-radius: 10px;
+	overflow: hidden;
+}
+.box-beli{
+	border-radius: 10px;
+	padding: 15px;
+}
+.box-ringkasan-det-bel{
+	border-radius: 10px;
+	padding: 15px; 
+	background: #2193b0;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: #FFF;
+
+}
+.input-number-group{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	width: 150px;
+	overflow: hidden;
+}
+
+.input-number-group li{
+		float: left;
+		width: 33%;
+		padding: 0;
+		margin: 0;
+	}
+.input-number{
+	width: 100%;
+	margin: 0;
+	text-align: center;
+}
+.btn-tambah-kurang{
+	margin: 0;
+	margin-left: 4px;
+	border: 0;
+}
+.input-catatan{
+	margin: 10px 0;
+}
+.alamat-checkout{
+	margin-bottom: 40px;
+	border-bottom: 5px solid rgba(0, 0, 0, 0.06);
+	padding-bottom: 40px;
+}
+.item-checkout{
+	margin: 20px 0;
+	border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
+	width: 100%;
+	overflow: hidden;
+}
+.item-checkout-grid{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.img-checkout{
+	margin-right: 20px;
+}
+.item-checkout-grid li{
+	float: left;
+	height: 100%;
+	min-width: 30px;
+}
+.checkbox-keranjang{
+	margin: 0 10px;
+	height: 100px;
+}
+.item-daftar-belanja{
+	margin:0;
+	border-bottom: 0.2px solid rgba(0, 0, 0, 0.1);
+	width: 100%;
+	padding-top: 12px;
+	overflow: hidden;
+	transition: 0.3s;
+}
+.item-daftar-belanja-grid{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+.item-daftar-belanja-grid li{
+	float: left;
+}
+.tq-pesan{
+	max-width: 500px;
+	text-align: center;
+}
+.item-keranjang{
+	overflow: hidden;
+}
+.item-keranjang:hover{
+	cursor: pointer;
+}
+.badge-jml-barang{
+	top: 10px;
+	right: -10px;
+}
+.item-daftar-belanja:hover{
+	cursor: pointer;
+	border-radius: 10px;
+	background: rgba(249, 249, 249, 1);
+}
+.kotak-filter{
+	border-radius: 10px;
+	border: 1px solid rgba( 0, 0, 0, 0.3);
+	padding: 10px 0;
+}
+.kotak-filter:hover{
+	cursor: pointer;
+}
+
+/*-- LOGIN / DAFTAR SECTION --*/
+.logo-daftar-login{
+	margin: 50px 0;
+}
+.logo-daftar-login a{
+	text-decoration: none;
+	color: black;
+
+}
+.box-registrasi-login{
+	width: 350px;
+	padding: 25px;
+	border-radius: 8px;
+}
+.form-daftar{
+	margin-top: 20px;
+}
+.img-pembayaran{
+	width: 100px;
+}
+.accordion{
+	width: 100%;
+}
+#img_contain{
+  max-width:280px;
+}
+#file-input{
+  margin-left:7px;
+  background-color:gray;
+}
+#image-preview{
+  max-width:280px;
+  display:block;
+  margin-bottom: 20px;
+}
+
+.card-outstanding{
+	margin: 0;
+	padding: 0;
+}
+.list-userdata{
+	font-weight: bold;
+}
+#sidebar-wrapper{
+	position: fixed;
+	height: 100%;
+	left: 0;
+	top: 0;
+	padding-top: 50px;
+	z-index: 1;
+}
+/* --  */
+@media (min-width: 769px) {
+	.border-end{
+		display: none;
+	}
+	#sidebarToggle{
+		display: none;
+	}
+}
+@media (max-width: 588px) {
+	.navbar-brand{
+		position: absolute;
+		right: 0px;
+		top: 5px;
+	}
+	.item-jual-desc h2{
+		font-size: 14px;
+	}
+	.item-gambar{
+		height: 100px;
+	}
+}
+@media (min-width: 991px) {
+	.toggle-kanan{
+		display: none;
+	}
+}
+
+@media (max-width: 991.98px) {
+	.section-search{
+		display: none;
+	}
+	.carousel-indicators{
+		display: none;
+	}
+}
