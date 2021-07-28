@@ -65,6 +65,7 @@
                 <th>Telp</th>
                 <th>Tgl Pesanan</th>
                 <th>Status</th>
+                <th>No. Resi</th>
                 <th>&nbsp;</th>
             </tr>
         </tfoot>

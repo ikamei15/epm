@@ -57,7 +57,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
 
-                        <form action="<?=base_url()?>backoffice/testimoni/edit" method="post" enctype="multipart/form-data">
+                        <form action="<?=base_url()?>backoffice/testimoni/edit/<?=$testimoni->tp_id?>" method="post" enctype="multipart/form-data">
                           <div class="modal-body">
                             <dl>
                               <dt class="col-sm-6">Nama</dt>

@@ -33,6 +33,11 @@ body{
 .section-search{
 	position: relative;
 }
+.section-search-mobile{
+	position: absolute;
+	left: 15px;
+	top: 24px;
+}
 .search-button{
 	position: absolute;
 	right: 8px;
@@ -142,7 +147,14 @@ body{
 	background: -webkit-linear-gradient(to left, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: #FFF;
-
+	margin-bottom: 20px;
+}
+.cetak-invoice{
+text-align: center;
+margin: 0;
+}
+.cr{
+	cursor: pointer;
 }
 .input-number-group{
 	padding: 0;
@@ -244,23 +256,6 @@ body{
 	cursor: pointer;
 }
 
-/*-- LOGIN / DAFTAR SECTION --*/
-.logo-daftar-login{
-	margin: 50px 0;
-}
-.logo-daftar-login a{
-	text-decoration: none;
-	color: black;
-
-}
-.box-registrasi-login{
-	width: 350px;
-	padding: 25px;
-	border-radius: 8px;
-}
-.form-daftar{
-	margin-top: 20px;
-}
 .img-pembayaran{
 	width: 100px;
 }
@@ -294,6 +289,24 @@ body{
 	top: 0;
 	padding-top: 50px;
 	z-index: 1;
+}
+
+/*-- LOGIN / DAFTAR SECTION --*/
+.logo-daftar-login{
+	margin: 50px 0;
+}
+.logo-daftar-login a{
+	text-decoration: none;
+	color: black;
+
+}
+.box-registrasi-login{
+	width: 350px;
+	padding: 25px;
+	border-radius: 8px;
+}
+.form-daftar{
+	margin-top: 20px;
 }
 /* --  */
 @media (min-width: 769px) {

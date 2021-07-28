@@ -16,6 +16,14 @@ class Mailer extends CI_Controller {
     }
     function index() 
     {
+
+        // TEMPLATE
+
+        function template($judul='',$pesan = '',$link ='')
+        {
+            echo "In bar(); argument was '$judul'.<br />\n";
+        }
+
         $recipient_admin = 'adammarulyanto@gmail.com';
         $param = $_GET['param'];
 
@@ -61,6 +69,20 @@ class Mailer extends CI_Controller {
                             <h1>Ada Pesanan Baru !!</h1>
                             <p>Ayo periksa pesanan barunya.</p>
                             <p><a style='padding:10px 25px; margin:20px 0; border:0; background:#2980b9; color:#fff; cursor: pointer; font-weight: bold; text-decoration:none;' href='".base_url()."backoffice/pengecekan'>Lihat Pesanan</a> </p>"; // isi email
+            $email_vars = array(
+                'judul' => 'Pesanan Baru',
+                'judul2' => 'Pesanan Baru Siap di Proses',
+                'pesan' => 'Ayo periksa pesanan barunya.',
+                'link' => base_url().'backoffice/pengecekan',
+                'tombol' => 'Lihat Pesanan',
+            );
+            $mailContent = file_get_contents(base_url().'assets/template/mailer.html');
+
+            if(isset($email_vars)){
+                foreach($email_vars as $k=>$v){
+                    $mailContent = str_replace('{'.strtoupper($k).'}', $v, $mailContent);
+                }
+            }
             $mail->Body = $mailContent;
 
             // Send email
@@ -86,19 +108,20 @@ class Mailer extends CI_Controller {
             $mail->isHTML(true);
 
             // Email body content
-            $mailContent = "<link rel='preconnect' href='https://fonts.googleapis.com'>
-                            <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-                            <link href='https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' rel='stylesheet'>
-                            <style type='text/css'>
-                                *{
-                                font-family: 'Open Sans', sans-serif;
-                                text-align: center;
-                                }
-                            </style>
+            $email_vars = array(
+                'judul' => 'Menunggu Pembayaran',
+                'judul2' => 'Pesanan Anda '.$pesanan->rp_no_pesanan.' Menunggu Pembayaran',
+                'pesan' => 'Lakukan Pembayaran Maksimal 2x24 Jam.',
+                'link' => base_url()."pembayaran?pesanan=".$id_pesanan,
+                'tombol' => 'Bayar Sekarang',
+            );
+            $mailContent = file_get_contents(base_url().'assets/template/mailer.html');
 
-                            <h1>Pesanan Anda ".$pesanan->rp_no_pesanan." Menunggu Pembayaran</h1>
-                            <p>Lakukan Pembayaran Maksimal 2x24 Jam.</p>
-                            <p><a style='padding:10px 25px; margin:20px 0; border:0; background:#2980b9; color:#fff; cursor: pointer; font-weight: bold; text-decoration:none;' href='".base_url()."pembayaran?pesanan=".$id_pesanan."'>Bayar Sekarang</a> </p>"; // isi email
+            if(isset($email_vars)){
+                foreach($email_vars as $k=>$v){
+                    $mailContent = str_replace('{'.strtoupper($k).'}', $v, $mailContent);
+                }
+            }
             $mail->Body = $mailContent;
 
             // Send email
@@ -123,19 +146,20 @@ class Mailer extends CI_Controller {
             $mail->isHTML(true);
 
             // Email body content
-            $mailContent = "<link rel='preconnect' href='https://fonts.googleapis.com'>
-                            <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-                            <link href='https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' rel='stylesheet'>
-                            <style type='text/css'>
-                                *{
-                                font-family: 'Open Sans', sans-serif;
-                                text-align: center;
-                                }
-                            </style>
+            $email_vars = array(
+                'judul' => 'Customer Melakukan Pembayaran',
+                'judul2' => 'Pesanan '.$pesanan->rp_no_pesanan.' Selesai Melakukan Pembayaran',
+                'pesan' => 'Ayo diperiksa bukti pembayarannya!',
+                'link' => base_url().'backoffice/pengecekan',
+                'tombol' => 'Lihat Pesanan',
+            );
+            $mailContent = file_get_contents(base_url().'assets/template/mailer.html');
 
-                            <h3>Pesanan ".$pesanan->rp_no_pesanan." Selesai Melakukan Pembayaran</h3>
-                            <p>Ayo diperiksa bukti pembayarannya!</p>
-                            <p><a style='padding:10px 25px; margin:20px 0; border:0; background:#2980b9; color:#fff; cursor: pointer; font-weight: bold; text-decoration:none;' href='".base_url()."backoffice/pengecekan'>Lihat Pesanan</a> </p>"; // isi email
+            if(isset($email_vars)){
+                foreach($email_vars as $k=>$v){
+                    $mailContent = str_replace('{'.strtoupper($k).'}', $v, $mailContent);
+                }
+            }
             $mail->Body = $mailContent;
 
             // Send email
@@ -160,19 +184,20 @@ class Mailer extends CI_Controller {
             $mail->isHTML(true);
 
             // Email body content
-            $mailContent = "<link rel='preconnect' href='https://fonts.googleapis.com'>
-                            <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-                            <link href='https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' rel='stylesheet'>
-                            <style type='text/css'>
-                                *{
-                                font-family: 'Open Sans', sans-serif;
-                                text-align: center;
-                                }
-                            </style>
+            $email_vars = array(
+                'judul' => 'Pesanan Anda Dalam Pengiriman',
+                'judul2' => 'Pesanan '.$pesanan->rp_no_pesanan. 'Dalam Pengiriman',
+                'pesan' => 'Berikut Nomor Resi Pengiriman Pesanan Anda<br>No Resi : '.$pesanan->rp_noresi,
+                'link' => base_url().'daftar_belanja/detail_daftar_belanja?id_pesanan='.$pesanan->rp_id,
+                'tombol' => 'Lihat Pesanan',
+            );
+            $mailContent = file_get_contents(base_url().'assets/template/mailer.html');
 
-                            <h3>Pesanan Anda ".$pesanan->rp_no_pesanan." Dalam Pengiriman</h3>
-                            <p>Nomor Resi : ".$pesanan->rp_noresi."</p>
-                            <p><a style='padding:10px 25px; margin:20px 0; border:0; background:#2980b9; color:#fff; cursor: pointer; font-weight: bold; text-decoration:none;' href='".base_url()."daftar_belanja/detail_daftar_belanja?id_pesanan=".$pesanan->rp_id."'>Lihat Pesanan</a> </p>"; // isi email
+            if(isset($email_vars)){
+                foreach($email_vars as $k=>$v){
+                    $mailContent = str_replace('{'.strtoupper($k).'}', $v, $mailContent);
+                }
+            }
             $mail->Body = $mailContent;
 
             // Send email
@@ -197,19 +222,20 @@ class Mailer extends CI_Controller {
             $mail->isHTML(true);
 
             // Email body content
-            $mailContent = "<link rel='preconnect' href='https://fonts.googleapis.com'>
-                            <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-                            <link href='https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' rel='stylesheet'>
-                            <style type='text/css'>
-                                *{
-                                font-family: 'Open Sans', sans-serif;
-                                text-align: center;
-                                }
-                            </style>
+            $email_vars = array(
+                'judul' => 'Pesanan Anda Selesai',
+                'judul2' => 'Pesanan Anda'.$pesanan->rp_no_pesanan. 'Telah Selesai',
+                'pesan' => 'Terima kasih sudah berbelanja di Eka Perkasa Mandiri.',
+                'link' => base_url(),
+                'tombol' => 'Belanja Lagi',
+            );
+            $mailContent = file_get_contents(base_url().'assets/template/mailer.html');
 
-                            <h3>Pesanan Anda ".$pesanan->rp_no_pesanan." Selesai</h3>
-                            <p>Terima kasih sudah berbelanja di Eka Perkasa Mandiri</p>
-                            <p><a style='padding:10px 25px; margin:20px 0; border:0; background:#2980b9; color:#fff; cursor: pointer; font-weight: bold; text-decoration:none;' href='".base_url()."'>Belanja Lagi</a> </p>"; // isi email
+            if(isset($email_vars)){
+                foreach($email_vars as $k=>$v){
+                    $mailContent = str_replace('{'.strtoupper($k).'}', $v, $mailContent);
+                }
+            }
             $mail->Body = $mailContent;
 
             // Send email
@@ -231,21 +257,21 @@ class Mailer extends CI_Controller {
 
             // Set email format to HTML
             $mail->isHTML(true);
+            $link = base_url().'daftar/verifikasi?id='.$query->id_ud;
+            $email_vars = array(
+                'judul' => 'Verifikasi Email',
+                'judul2' => 'Verifikasi',
+                'pesan' => 'Email anda terdaftar pada ecommerce kami, mohon lakukan verifikasi email sebelum melakukan pembelian.',
+                'link' => $link,
+                'tombol' => 'Verifikasi Email',
+            );
+            $mailContent = file_get_contents(base_url().'assets/template/mailer.html');
 
-            // Email body content
-            $mailContent = "<link rel='preconnect' href='https://fonts.googleapis.com'>
-                            <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-                            <link href='https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' rel='stylesheet'>
-                            <style type='text/css'>
-                                *{
-                                font-family: 'Open Sans', sans-serif;
-                                text-align: center;
-                                }
-                            </style>
-
-                            <h3>Verifikasi Email</h3>
-                            <p>Email anda terdaftar pada ecommerce kami, mohon lakukan verifikasi email sebelum melakukan pembelian.</p>
-                            <p><a style='padding:10px 25px; margin:20px 0; border:0; background:#2980b9; color:#fff; cursor: pointer; font-weight: bold; text-decoration:none;' href='".base_url()."daftar/verifikasi?id=".$query->id_ud."'>Verifikasi Email</a> </p>"; // isi email
+            if(isset($email_vars)){
+                foreach($email_vars as $k=>$v){
+                    $mailContent = str_replace('{'.strtoupper($k).'}', $v, $mailContent);
+                }
+            }
             $mail->Body = $mailContent;
 
             // Send email

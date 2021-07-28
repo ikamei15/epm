@@ -3,11 +3,30 @@
             <!-- Sidebar-->
             <div class="border-end bg-white" id="sidebar-wrapper">
                 <!-- <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div> -->
-                <div class="list-group list-group-flush position-relative">
+                <div class="list-group list-group-flush position-relative"><br>
+                    <span class="list-group-item list-group-item-action list-group-item-light p-3">&nbsp</span>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?=base_url()?>keranjang">Keranjang</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?=base_url()?>daftar_belanja">Daftar Belanja</a>
+                    <div class="col-lg-12 section-search-mobile">
+                        <form action="<?=base_url()?>search" method="get">
+                            <input type="text" name="cari" class="form-mencari">
+                            <input type="hidden" name="order" class="form-mencari" value="Terlaris">
+                            <button class="search-button" type="submit"><i class="bi bi-search"></i></button>
+                        </form>
+                    </div>
+                    <?php
+                    if($this->session->userdata('status')=="login"){
+                    ?>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?=base_url()?>data_diri"><?=$this->session->userdata('ud_nama')?></a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?=base_url()?>masuk/logout">Logout</a>
+                    <?php
+                    }else{
+                    ?>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?=base_url()?>masuk">Masuk</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="<?=base_url()?>daftar">Daftar</a>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
             <!-- Page content wrapper-->

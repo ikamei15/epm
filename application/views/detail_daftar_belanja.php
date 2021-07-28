@@ -70,8 +70,18 @@
                             <h6>Total Belanja</h6>
                             <h3 class="h3 pb-4 pt-3"><b>Rp <?=number_format($ringkasan_belanja->rp_total_harga,0,',','.')?><b></h3>
                             <p><small>Jumlah Barang :</small> <?=$ringkasan_belanja->rp_qty?><br>
-                            <small>Tanggal Transaksi :</small> <?=$ringkasan_belanja->tgl_pesanan?>
+                            <small>Tanggal Transaksi :</small> <?=$ringkasan_belanja->tgl_pesanan?><br>
+                            <?php
+                            if($ringkasan_belanja->rp_status==4){
+                            ?>
+                            <small>Nomor Resi :</small> <?=$ringkasan_belanja->rp_noresi?><br>
+                            <?php
+                            }
+                            ?>
                             </p>
+                        </div>
+                        <div class="box-ringkasan-det-bel shadow bg-light cr" onclick="window.location.href='<?=base_url()?>daftar_belanja/invoice?id_pesanan=<?=$_GET['id_pesanan']?>'">
+                            <p class="cetak-invoice" align="center">Cetak Invoice</p>
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,9 @@
+.table{
+  font-size: 14px;
+}
+.cont-dashboard{
+	padding: 0 3%;
+}
 .menu-active{
 	background: #34495e;
 	color: #FFF;
@@ -60,4 +66,38 @@
 	width: 350px;
 	padding: 25px;
 	border-radius: 8px;
+}
+.box-dashboard{
+	margin-bottom: 20px;
+}
+.box-dashboard-resume{
+	margin: 20px 0;
+}
+.box-dashboard-inside{
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	padding: 20px;
+	background: white;
+	position: relative;
+}
+.box-inside-resume{
+	padding: 5% 10%;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	text-align: right;
+	background: white;
+}
+.box-inside-resume p{
+	padding: 0;
+	margin: 0;
+	margin-top: 10px;
+}
+.img-box-resume{
+	padding: 10%;
+}
+.canvas-cart{
+	max-height: 400px;
+}
+.btn-print{
+	position: absolute;
+	top: 15px;
+	right: 15px;
 }

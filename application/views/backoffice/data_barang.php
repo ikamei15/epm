@@ -87,7 +87,7 @@
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Tambah Data Barang</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">Edit Barang</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
 
@@ -100,14 +100,14 @@
                               <dt class="col-sm-6">Kategori</dt>
                               <dd class="col-sm-12">
                               <select name="kategori" class="form-control">
-                                <?php foreach($kategori2 as $kategori) {?>
-                                  <option value="<?=$kategori2->kb_id?>"
+                                <?php foreach($kategori2 as $list_kategori) {?>
+                                  <option value="<?=$list_kategori->kb_id?>"
                                     <?php
-                                    if($kategori2->kb_id == $data_barang->bd_kategori){
+                                    if($list_kategori->kb_id == $data_barang->bd_kategori){
                                       echo "selected";
                                     }
                                     ?>
-                                    ><?=$kategori2->kb_nama_kategori?></option>
+                                    ><?=$list_kategori->kb_nama_kategori?></option>
                                 <?php } ?>
                               </select>
                               </dd>

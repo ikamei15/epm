@@ -46,7 +46,7 @@
                 <td><?=$kategori->kb_created_date?></td>
                 <td>
                     <button type="button" class="btn btn-primary" title="Edit Kategori" data-bs-toggle="modal" data-bs-target="#staticBackdrop<?=$kategori->kb_id?>"><i class="bi bi-pencil-square"></i></button>
-                    <div class="modal fade" id="staticBackdrop<?=$kategori->kb_nama_kategori?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal fade" id="staticBackdrop<?=$kategori->kb_id?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -54,7 +54,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                           </div>
 
-                        <form action="<?=base_url()?>backoffice/kategori/edit" method="post" enctype="multipart/form-data">
+                        <form action="<?=base_url()?>backoffice/kategori/edit/<?=$kategori->kb_id?>" method="post" enctype="multipart/form-data">
                           <div class="modal-body">
                             <dl>
                               <dt class="col-sm-6">Nama Kategori</dt>

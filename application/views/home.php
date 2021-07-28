@@ -1,4 +1,3 @@
-
                 <!-- Page content-->
                 <!-- Header-->
         <header class="bg-light py-5">
@@ -67,7 +66,7 @@
             <div class="container px-5 my-5 discount-section border-bottom">
                 <div class="text-left mb-5">
                     <h2 class="fw-bolder">Glass Clip</h2>
-                    <p class="lead mb-0"><a href='<?=base_url()?>kategori?kat=1' class="lihat-semua">Lihat Semua</a></p>
+                    <p class="lead mb-0"><a href='<?=base_url()?>kategori?kat=1&order=' class="lihat-semua">Lihat Semua</a></p>
                 </div>
                 <div class="row gx-5">
                     <?php
@@ -93,7 +92,7 @@
             <div class="container px-5 my-5 discount-section border-bottom">
                 <div class="text-left mb-5">
                     <h2 class="fw-bolder">Glass Clamp</h2>
-                    <p class="lead mb-0"><a href='<?=base_url()?>kategori?kat=2' class="lihat-semua">Lihat Semua</a></p>
+                    <p class="lead mb-0"><a href='<?=base_url()?>kategori?kat=2&order=' class="lihat-semua">Lihat Semua</a></p>
                 </div>
                 <div class="row gx-5">
                     <?php

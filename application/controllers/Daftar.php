@@ -44,7 +44,7 @@ class Daftar extends CI_Controller {
 		if($cek){
 			echo "<script type='text/javascript'>window.alert('Email sudah digunakan.');window.location.href = '".$_SERVER['HTTP_REFERER']."';</script>";
 		}else{
-			$this->db->query("INSERT INTO `epm`.`user_data` (`ud_id`, `ud_nama`, `ud_email`, `ud_password`) VALUES (NULL, '$nama', '$email', sha1('$password'));
+			$this->db->query("INSERT INTO `user_data` (`ud_id`, `ud_nama`, `ud_email`, `ud_password`) VALUES (NULL, '$nama', '$email', sha1('$password'));
 ");
 			echo "<script type='text/javascript'>window.alert('Terima kasih sudah mendaftarkan akun, Mohon lakukan verifikasi dan melengkapi data diri sebelum melakukan pembelian');window.location.href = '".base_url()."mailer?param=verifcation&recipient=".$email."';</script>";
 		}
@@ -75,7 +75,7 @@ class Daftar extends CI_Controller {
 		$cek = $this->db->query("SELECT * FROM user_data WHERE sha1(ud_id)='$id'")->result();
 
 		if($cek){
-			$this->db->query("UPDATE `epm`.`user_data` set ud_verified='Y', ud_verified_date = NOW() where sha1(ud_id)='$id';");
+			$this->db->query("UPDATE `user_data` set ud_verified='Y', ud_verified_date = NOW() where sha1(ud_id)='$id';");
 			echo "<script type='text/javascript'>window.alert('Verifikasi Email Berhasil');window.location.href = '".base_url()."daftar/suc_ver';</script>";
 		}else{
 			echo "<script type='text/javascript'>window.alert('Verifikasi gagal, Mohon lakukan beberapa saat lagi');window.location.href = '".base_url()."masuk';</script>";

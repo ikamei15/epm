@@ -45,10 +45,10 @@ class Data_diri extends CI_Controller {
 		$password = $this->input->post('password');
 
 		if(empty($password)){
-			$this->db->query("UPDATE `epm`.`user_data` SET `ud_nama` = '$nama', `ud_email` = '$email', `ud_alamat` = '$alamat', `ud_kodepos` = '$kodepos', `ud_notelp` = '$notelp', `ud_created_date` = NOW() WHERE `ud_id` = $id;");
+			$this->db->query("UPDATE `user_data` SET `ud_nama` = '$nama', `ud_email` = '$email', `ud_alamat` = '$alamat', `ud_kodepos` = '$kodepos', `ud_notelp` = '$notelp', `ud_created_date` = NOW() WHERE `ud_id` = $id;");
 			echo "<script type='text/javascript'>window.alert('Data diri sudah di update');window.location.href = '".$_SERVER['HTTP_REFERER']."';</script>";
 		}else{
-			$this->db->query("UPDATE `epm`.`user_data` SET `ud_nama` = '$nama', `ud_email` = '$email',ud_password=sha1('$password'), `ud_alamat` = '$alamat', `ud_kodepos` = '$kodepos', `ud_notelp` = '$notelp', `ud_created_date` = NOW() WHERE `ud_id` = $id;");
+			$this->db->query("UPDATE `user_data` SET `ud_nama` = '$nama', `ud_email` = '$email',ud_password=sha1('$password'), `ud_alamat` = '$alamat', `ud_kodepos` = '$kodepos', `ud_notelp` = '$notelp', `ud_created_date` = NOW() WHERE `ud_id` = $id;");
 			echo "<script type='text/javascript'>window.alert('Data diri sudah di update');window.location.href = '".$_SERVER['HTTP_REFERER']."';</script>";
 		}
 	}

@@ -45,7 +45,7 @@ class Home extends CI_Controller {
 		$notelp = $this->input->post('notelp');
 		$pesan = $this->input->post('pesan');
 
-		$insert = $this->db->query("INSERT INTO `epm`.`hubungi_kami` (`hk_id`, `hl_nama_lengkap`, `hk_email`, `hk_notelp`, `hk_pesan`, `hk_created_date`) VALUES (null, '$nama', '$email', '$notelp', '$pesan', NOW());
+		$insert = $this->db->query("INSERT INTO `hubungi_kami` (`hk_id`, `hl_nama_lengkap`, `hk_email`, `hk_notelp`, `hk_pesan`, `hk_created_date`) VALUES (null, '$nama', '$email', '$notelp', '$pesan', NOW());
 ");
 		echo "<script type='text/javascript'>window.alert('Terimakasih sudah menghubungi kami, Pesan berhasil terkirim.');window.location.href = '".$_SERVER['HTTP_REFERER']."';</script>";
 	}

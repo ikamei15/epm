@@ -10,7 +10,7 @@
                 <?php
                 foreach ($daftar_os as $daftar_os){
                 ?>
-                    <div class="col-3">
+                    <div class="col-lg-3 col-12">
                         <div class="card text-white bg-primary">
                           <h5 class="card-header"><strong><?=$daftar_os->rp_no_pesanan?></strong></h5>
                           <div class="card-body">

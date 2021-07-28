@@ -55,4 +55,14 @@ class Daftar_belanja extends CI_Controller {
 		$this->load->view('detail_daftar_belanja',$data);
 		$this->load->view('include/footer');
 	}
+	public function invoice()
+	{
+
+		$id_user = $this->session->userdata('ud_id');
+		$id_pesanan = $_GET['id_pesanan'];
+		$data['ringkasan_belanja'] = $this->db->query("select *,date_format(rp_created_date,'%d %M %Y %H:%i:%s') tgl_pesanan from ringkasan_pesanan where rp_id = $id_pesanan")->result();
+		$data['belanjaan'] = $this->db->query("select bd_nama_barang,dp_qty,dp_total_harga,bd_gambar,dp_total_harga/dp_qty harga_barang from detail_pesanan left join barang_data on bd_id = dp_barang where dp_ringkasan_id =$id_pesanan")->result();
+		$this->load->view('include/header');
+		$this->load->view('invoice',$data);
+	}
 }
