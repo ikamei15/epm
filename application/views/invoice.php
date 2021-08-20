@@ -184,9 +184,16 @@
             <?php
             }
             ?>
+           <tr>
+            <td class="service">Ongkos Kirim</td>
+            <td class="desc">&nbsp;</td>
+            <td class="unit"></td>
+            <td class="qty"></td>
+            <td class="total">Rp<?=number_format($ringkasan_belanja->rp_ongkir,0,',','.')?></td>
+          </tr>
           <tr>
             <td colspan="4" class="grand total">GRAND TOTAL</td>
-            <td class="grand total">Rp<?=number_format($ringkasan_belanja->rp_total_harga,0,',','.')?></td>
+            <td class="grand total">Rp<?=number_format($ringkasan_belanja->rp_total_harga+$ringkasan_belanja->rp_ongkir,0,',','.')?></td>
           </tr>
         </tbody>
       </table>

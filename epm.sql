@@ -11,7 +11,7 @@
  Target Server Version : 100138
  File Encoding         : 65001
 
- Date: 20/07/2021 20:02:38
+ Date: 15/07/2021 09:43:39
 */
 
 SET NAMES utf8mb4;
@@ -65,7 +65,7 @@ CREATE TABLE `bo_users`  (
 -- ----------------------------
 -- Records of bo_users
 -- ----------------------------
-INSERT INTO `bo_users` VALUES (1, 'admin', '7c222fb2927d828af22f592134e8932480637c0d', 'Administator', '2021-07-17 14:13:21');
+INSERT INTO `bo_users` VALUES (1, 'admin', '7c222fb2927d828af22f592134e8932480637c0d', 'Administator', '2021-07-15 02:03:58');
 
 -- ----------------------------
 -- Table structure for detail_pesanan
@@ -86,17 +86,16 @@ CREATE TABLE `detail_pesanan`  (
   CONSTRAINT `fk_dp_1` FOREIGN KEY (`dp_ringkasan_id`) REFERENCES `ringkasan_pesanan` (`rp_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_dp_2` FOREIGN KEY (`dp_user`) REFERENCES `user_data` (`ud_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_dp_3` FOREIGN KEY (`dp_barang`) REFERENCES `barang_data` (`bd_id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of detail_pesanan
 -- ----------------------------
-INSERT INTO `detail_pesanan` VALUES (1, 1, 1, 2, 1, '50000', '2021-07-14 21:08:17');
-INSERT INTO `detail_pesanan` VALUES (2, 2, 1, 5, 1, '50000', '2021-07-14 21:08:49');
-INSERT INTO `detail_pesanan` VALUES (3, 3, 1, 8, 1, '50000', '2021-07-14 21:10:57');
-INSERT INTO `detail_pesanan` VALUES (4, 4, 7, 7, 1, '50000', '2021-07-15 01:22:42');
-INSERT INTO `detail_pesanan` VALUES (5, 4, 7, 2, 1, '50000', '2021-07-15 01:22:42');
-INSERT INTO `detail_pesanan` VALUES (6, 5, 10, 10, 3, '150000', '2021-07-16 02:14:36');
+INSERT INTO `detail_pesanan` VALUES (1, 1, 1, 10, 1, '50000', '2021-07-14 21:08:17');
+INSERT INTO `detail_pesanan` VALUES (2, 2, 1, 10, 1, '50000', '2021-07-14 21:08:49');
+INSERT INTO `detail_pesanan` VALUES (3, 3, 1, 10, 1, '50000', '2021-07-14 21:10:57');
+INSERT INTO `detail_pesanan` VALUES (4, 4, 7, 10, 1, '50000', '2021-07-15 01:22:42');
+INSERT INTO `detail_pesanan` VALUES (5, 4, 7, 9, 1, '50000', '2021-07-15 01:22:42');
 
 -- ----------------------------
 -- Table structure for hubungi_kami
@@ -132,7 +131,7 @@ CREATE TABLE `kategori_barang`  (
 -- ----------------------------
 -- Records of kategori_barang
 -- ----------------------------
-INSERT INTO `kategori_barang` VALUES (1, 'Glass Clip', '2021-07-16 01:13:21');
+INSERT INTO `kategori_barang` VALUES (1, 'Glass Clip', '2021-07-13 21:21:14');
 INSERT INTO `kategori_barang` VALUES (2, 'Glass Clamp', '2021-07-13 21:21:25');
 INSERT INTO `kategori_barang` VALUES (3, 'Floor Hinge', '2021-07-13 21:21:42');
 INSERT INTO `kategori_barang` VALUES (4, 'Handle', '2021-07-13 21:21:54');
@@ -153,12 +152,11 @@ CREATE TABLE `keranjang`  (
   INDEX `fk_kr_2`(`kr_barang`) USING BTREE,
   CONSTRAINT `fk_kr_1` FOREIGN KEY (`kr_user`) REFERENCES `user_data` (`ud_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
   CONSTRAINT `fk_kr_2` FOREIGN KEY (`kr_barang`) REFERENCES `barang_data` (`bd_id`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of keranjang
 -- ----------------------------
-INSERT INTO `keranjang` VALUES (2, 7, 10, 1);
 
 -- ----------------------------
 -- Table structure for ringkasan_pesanan
@@ -183,16 +181,15 @@ CREATE TABLE `ringkasan_pesanan`  (
   PRIMARY KEY (`rp_id`) USING BTREE,
   INDEX `fk_rp_1`(`rp_user`) USING BTREE,
   CONSTRAINT `fk_rp_1` FOREIGN KEY (`rp_user`) REFERENCES `user_data` (`ud_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of ringkasan_pesanan
 -- ----------------------------
-INSERT INTO `ringkasan_pesanan` VALUES (1, 1, 'INV20210711', 1, 50000.00, 9000.00, 'Admin', 'jl. Sepanjang Jalan Menuju Roma, Pondok Ranji, Tangerang Selatan 14014', 14014, '88809323231', NULL, NULL, 2, NULL, '2021-04-14 21:08:17');
-INSERT INTO `ringkasan_pesanan` VALUES (2, 1, 'INV20210712', 1, 50000.00, NULL, 'Admin', 'jl. Sepanjang Jalan Menuju Roma, Pondok Ranji, Tangerang Selatan 14014', 14014, '88809323231', NULL, NULL, 1, NULL, '2021-05-14 21:08:49');
-INSERT INTO `ringkasan_pesanan` VALUES (3, 1, 'INV20210713', 1, 50000.00, 9000.00, 'Admin', 'jl. Sepanjang Jalan Menuju Roma, Pondok Ranji, Tangerang Selatan 14014', 14014, '88809323231', '12312312312', '20210714160702', 5, NULL, '2021-06-14 21:10:57');
-INSERT INTO `ringkasan_pesanan` VALUES (4, 7, 'INV20210771', 2, 100000.00, 9000.00, 'Adam', 'asdasd', 1235, '8888123123', '12312312312', '20210714200707', 4, NULL, '2021-07-15 01:22:42');
-INSERT INTO `ringkasan_pesanan` VALUES (5, 10, 'INV202107101', 3, 150000.00, 9000.00, 'Adam Marulyanto', 'Adasdasda', 12345, '888', '1232133345', '20210715210735', 5, NULL, '2021-07-16 02:14:36');
+INSERT INTO `ringkasan_pesanan` VALUES (1, 1, 'INV20210711', 1, 50000.00, 9000.00, 'Admin', 'jl. Sepanjang Jalan Menuju Roma, Pondok Ranji, Tangerang Selatan 14014', 14014, '88809323231', NULL, NULL, 2, NULL, '2021-07-14 21:08:17');
+INSERT INTO `ringkasan_pesanan` VALUES (2, 1, 'INV20210712', 1, 50000.00, NULL, 'Admin', 'jl. Sepanjang Jalan Menuju Roma, Pondok Ranji, Tangerang Selatan 14014', 14014, '88809323231', NULL, NULL, 1, NULL, '2021-07-14 21:08:49');
+INSERT INTO `ringkasan_pesanan` VALUES (3, 1, 'INV20210713', 1, 50000.00, 9000.00, 'Admin', 'jl. Sepanjang Jalan Menuju Roma, Pondok Ranji, Tangerang Selatan 14014', 14014, '88809323231', '12312312312', '20210714160702', 5, NULL, '2021-07-14 21:10:57');
+INSERT INTO `ringkasan_pesanan` VALUES (4, 7, 'INV20210771', 2, 100000.00, 9000.00, 'Adam', 'asdasd', 1235, '8888123123', '12312312312', '20210714200707', 5, NULL, '2021-07-15 01:22:42');
 
 -- ----------------------------
 -- Table structure for slide_banner
@@ -227,6 +224,7 @@ CREATE TABLE `testimoni_pembeli`  (
 -- ----------------------------
 -- Records of testimoni_pembeli
 -- ----------------------------
+INSERT INTO `testimoni_pembeli` VALUES (1, 'Adam Marulyanto', 'Thank you for putting together such a great product. We loved working with you and the whole team, and we will be recommending you to others!', '2021-07-15 01:45:59');
 INSERT INTO `testimoni_pembeli` VALUES (2, 'Marul', 'Keren bed dah ah', '2021-07-15 01:59:27');
 
 -- ----------------------------
@@ -246,15 +244,14 @@ CREATE TABLE `user_data`  (
   `ud_verified_date` datetime NULL DEFAULT NULL,
   `ud_created_date` datetime NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`ud_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = COMPACT;
 
 -- ----------------------------
 -- Records of user_data
 -- ----------------------------
 INSERT INTO `user_data` VALUES (1, 'Admin', 'admin@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', '2021-07-14 21:31:54', 'jl. Sepanjang Jalan Menuju Roma, Pondok Ranji, Tangerang Selatan 14014', 14014, '088809323231', 'N', NULL, '2021-07-14 00:26:20');
-INSERT INTO `user_data` VALUES (7, 'Adam', 'adammarulyanto@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', '2021-07-16 12:44:53', 'asdasd', 1235, '08888123123', 'Y', '2021-07-15 01:16:23', '2021-07-14 23:41:35');
-INSERT INTO `user_data` VALUES (8, 'Marul', 'amarulyantooo@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', '2021-07-15 01:01:47', NULL, NULL, NULL, 'Y', '2021-07-14 23:50:22', '2021-07-14 23:45:04');
+INSERT INTO `user_data` VALUES (7, 'Adam', 'adammarulyanto@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', '2021-07-15 01:22:31', 'asdasd', 1235, '08888123123', 'Y', '2021-07-15 01:16:23', '2021-07-14 23:41:35');
+INSERT INTO `user_data` VALUES (8, 'Marul', 'amarulyanto@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', '2021-07-15 01:01:47', NULL, NULL, NULL, 'Y', '2021-07-14 23:50:22', '2021-07-14 23:45:04');
 INSERT INTO `user_data` VALUES (9, 'Anto', 'adammarulyanto@icloud.com', '7c222fb2927d828af22f592134e8932480637c0d', '2021-07-15 01:28:51', NULL, NULL, NULL, 'Y', '2021-07-15 01:28:37', '2021-07-15 01:26:44');
-INSERT INTO `user_data` VALUES (10, 'Adam Marulyanto', 'amarulyanto@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', '2021-07-16 02:18:42', NULL, NULL, NULL, 'Y', '2021-07-16 02:03:54', '2021-07-16 02:01:56');
 
 SET FOREIGN_KEY_CHECKS = 1;

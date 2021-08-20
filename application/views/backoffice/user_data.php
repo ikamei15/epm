@@ -20,7 +20,7 @@
             <tr>
                 <td><?=$user_data->ud_nama?></td>
                 <td><?=$user_data->ud_email?></td>
-                <td><?=$user_data->ud_alamat?></td>
+                <td><p class="judul-item"><?=$user_data->ud_alamat?></p></td>
                 <td><?=$user_data->ud_notelp?></td>
                 <td><?=$user_data->ud_last_login?></td>
                 <td></td>

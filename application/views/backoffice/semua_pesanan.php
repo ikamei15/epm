@@ -21,7 +21,7 @@
             <tr>
                 <td><?=$semua_pesanan->rp_penerima?></td>
                 <td><?=$semua_pesanan->rp_no_pesanan?></td>
-                <td><?=$semua_pesanan->rp_alamat?></td>
+                <td><p class="judul-item"><?=$semua_pesanan->rp_alamat?></p></td>
                 <td><?=$semua_pesanan->rp_notelp?></td>
                 <td><?=$semua_pesanan->rp_created_date?></td>
                 <td>

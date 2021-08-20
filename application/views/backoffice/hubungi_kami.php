@@ -33,9 +33,8 @@
         <tfoot>
             <tr>
                 <th>Nama</th>
-                <th>No Telepon</th>
-                <th>Email</th>
-                <th>Pesan</th>
+                <th>Testimoni</th>
+                <th>Dibuat</th>
                 <th>&nbsp;</th>
             </tr>
         </tfoot>

@@ -22,7 +22,7 @@
             <tr>
                 <td><?=$pengiriman->rp_penerima?></td>
                 <td><?=$pengiriman->rp_no_pesanan?></td>
-                <td><?=$pengiriman->rp_alamat?></td>
+                <td><p class="judul-item"><?=$pengiriman->rp_alamat?></p></td>
                 <td><?=$pengiriman->rp_notelp?></td>
                 <td><?=$pengiriman->rp_created_date?></td>
                 <td>
@@ -65,7 +65,6 @@
                 <th>Telp</th>
                 <th>Tgl Pesanan</th>
                 <th>Status</th>
-                <th>No. Resi</th>
                 <th>&nbsp;</th>
             </tr>
         </tfoot>

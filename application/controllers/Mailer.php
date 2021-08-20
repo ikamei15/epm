@@ -24,7 +24,7 @@ class Mailer extends CI_Controller {
             echo "In bar(); argument was '$judul'.<br />\n";
         }
 
-        $recipient_admin = 'adammarulyanto@gmail.com';
+        $recipient_admin = 'ikawahyu4118@gmail.com';
         $param = $_GET['param'];
 
         // PHPMailer object
@@ -36,13 +36,13 @@ class Mailer extends CI_Controller {
         $mail->isSMTP();
         $mail->Host     = 'smtp.gmail.com'; //sesuaikan sesuai nama domain hosting/server yang digunakan
         $mail->SMTPAuth = true;
-        $mail->Username = 'adammarulyanto@gmail.com'; // user email
-        $mail->Password = '192Uitai'; // password email
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port     = 465;
+        $mail->Username = 'ikawahyu4118@gmail.com'; // user email
+        $mail->Password = 'ikabsi94'; // password email
+        $mail->SMTPSecure = 'tls';
+        $mail->Port     = 587;
 
-        $mail->setFrom('adammarulyanto@gmail.com', ''); // user email
-        $mail->addReplyTo('adammarulyanto@gmail.com', ''); //user email
+        $mail->setFrom('ikawahyu4118@gmail.com', ''); // user email
+        $mail->addReplyTo('ikawahyu4118@gmail.com', ''); //user email
 
         if($param=='checkout'){
             $recipient =  $recipient_admin;

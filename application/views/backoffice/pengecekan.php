@@ -22,7 +22,7 @@
             <tr>
                 <td><?=$pengecekan->rp_penerima?></td>
                 <td><?=$pengecekan->rp_no_pesanan?></td>
-                <td><?=$pengecekan->rp_alamat?></td>
+                <td><p class="judul-item"><?=$pengecekan->rp_alamat?></p></td>
                 <td><?=$pengecekan->rp_notelp?></td>
                 <td><?=$pengecekan->rp_created_date?></td>
                 <td>

@@ -10,7 +10,7 @@
         if($_GET['alert'] == 'wrong'){
           echo "
             <div class='alert alert-warning alert-dismissible fade show' role='alert'>
-              <strong>Oops!</strong> Username atau Password Salah.
+              <strong>Oops!</strong> Email Address atau Password Salah.
               <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>
           ";

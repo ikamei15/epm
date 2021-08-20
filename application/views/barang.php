@@ -5,7 +5,7 @@
             <div class="container px-5 my-5 discount-section border-bottom">
                 <div class="row gx-5">
                     <div class="col-lg-3" style="margin-bottom: 20px;">
-                        <div class="col-12 box-image-barang shadow-sm">
+                        <div class="box-image-barang shadow-sm">
                             <a href="<?=base_url()?>assets/images/accesoris/<?=$data_barang->bd_gambar?>" target="_blank"><img src="<?=base_url()?>assets/images/accesoris/<?=$data_barang->bd_gambar?>" class="img-fluid"></a>
                         </div>
                     </div>

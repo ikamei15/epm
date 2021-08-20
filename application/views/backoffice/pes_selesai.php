@@ -20,7 +20,7 @@
             <tr>
                 <td><?=$pesanan_selesai->rp_penerima?></td>
                 <td><?=$pesanan_selesai->rp_no_pesanan?></td>
-                <td><?=$pesanan_selesai->rp_alamat?></td>
+                <td><p class="judul-item"><?=$pesanan_selesai->rp_alamat?></p></td>
                 <td><?=$pesanan_selesai->rp_notelp?></td>
                 <td><?=$pesanan_selesai->rp_created_date?></td>
                 <td>
