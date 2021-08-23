@@ -405,7 +405,7 @@ class Backoffice extends CI_Controller {
 		$noresi = $this->input->post('noresi');
 		$id_pesanan = $this->input->post('id_pesanan');
 
- 		$run = $this->db->query("UPDATE ringkasan_pesanan set rp_noresi = $noresi where rp_id = $id_pesanan");
+ 		$run = $this->db->query("UPDATE ringkasan_pesanan set rp_noresi = '$noresi' where rp_id = $id_pesanan");
 
  		if($run){
  			echo "<script type='text/javascript'>window.alert('Update Nomor Resi pada Pesanan $nopesanan Berhasil.');window.location.href = '".$_SERVER['HTTP_REFERER']."';</script>";
